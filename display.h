@@ -4,8 +4,9 @@
 #define MAXLINEBUFFER 256
 #define MAXPREVIEWSIZE 4096
 
-#include <ncurses.h>
 #include "data.h"
+
+#include <ncurses.h>
 
 typedef struct Display {
   WINDOW *root;

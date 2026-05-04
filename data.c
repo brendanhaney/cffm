@@ -1,3 +1,7 @@
+#include "config.h"
+#include "data.h"
+#include "hash.h"
+
 #include <dirent.h>
 #include <unistd.h>
 #include <string.h>
@@ -8,14 +12,13 @@
 #include <time.h>
 #include <sys/stat.h>
 #include <assert.h>
-#include "config.h"
-#include "data.h"
-#include "hash.h"
+
 /*main functions*/
 Directory *init_directories(char *path);
 void read_directory(const char *filepath, Directory *dir);
 void update_directory(Directory *dir);
 void free_directory_tree(Directory **dir, int free_src_dir);
+
 /*utility functions*/
 int open_and_read(const char *filepath, Directory *dir);
 int is_directory(const char *path);

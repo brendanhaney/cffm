@@ -1,3 +1,7 @@
+#include "display.h"
+#include "data.h"
+#include "config.h"
+
 #include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,14 +10,13 @@
 #include <sys/wait.h>
 #include <unistd.h>
 #include <string.h>
-#include "display.h"
-#include "data.h"
-#include "config.h"
+
 /*main function defs*/
 void get_updates(Display *dis);
 Display *init_display(Directory *dir);
 void update_display(Display *dis, Directory **dir);
 void kill_display(Display *dis);
+
 /*utility functions*/
 void draw_window(WINDOW *win, int width, int height, Directory *dir, int mode, const char *buffer);
 char *get_file_preview(File *file);

@@ -1,5 +1,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
+
+#define VER_MAJOR 1
+#define VER_MINOR 1
+#define VER_PATCH 0
+#define VER_PREFIX "-dev"
+
 /*you shouldn't modify these*/
 #define TERMCOLOR -1
 #define RED     1
@@ -10,6 +16,7 @@
 #define YELLOW  6
 #define WHITE   7
 #define BLACK   8
+
 /*window modes*/
 #define DIR_MODE      0
 #define PREVIEW_MODE  1
@@ -22,6 +29,7 @@
 /*********************************\
 * set your desired values below.  *
 \*********************************/
+
 /*Colors*/
 #define BACKGROUND    TERMCOLOR
 #define BORDERCOLOR   PURPLE
@@ -36,6 +44,7 @@
 #define MEDIACOLOR    BLUE
 #define CMDCOLOR      GREEN
 #define VMCOLOR       WHITE /*selected files' color*/
+
 /*Settings*/
 #define SHOWHIDDENDEFAULT 0
 #define SHOWBORDERDEFAULT 0
@@ -64,4 +73,5 @@
 #define key_show_border 'b'
 
 #define DATE_FORMAT "%a %Y-%m-%d %H:%M:%S %Z"
+
 #endif  

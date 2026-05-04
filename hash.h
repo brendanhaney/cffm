@@ -10,11 +10,13 @@ typedef struct Table Table;
 
 struct ht_entry {
   void *dir; 
+
   ht_entry *next;
 };
 
 struct Table {
   int collisions;
+
   ht_entry *entries;
 };
 
