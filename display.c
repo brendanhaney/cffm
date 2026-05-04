@@ -269,30 +269,39 @@ void read_selected(Directory *temp) {
 }
 
 char *get_file_preview(File *file) {
+
   FILE *fp = NULL;
   uint64_t length;
+
   int i = 0;
   char c;
   char *buffer;
 
-  if (file->path != NULL) fp = fopen(file->path, "r");
-  if (fp == NULL) return NULL;
+  fp = fopen(file->path, "r");
+
+  if (fp == NULL) 
+    return NULL;
 
   length = file->bytesize;
+
   if (length > MAXPREVIEWSIZE) length = MAXPREVIEWSIZE;
 
   buffer = malloc(sizeof(char) * length+1);
+
   while ((c = fgetc(fp)) != EOF && (uint64_t) i < length) {
     buffer[i] = c;
     i++;
   }
+
   /*is the file a text file? If not, return NULL*/
   if (memchr(buffer, '\0', length-1) != NULL) {
     free(buffer);
     fclose(fp);
     return NULL;
   }
+
   fclose(fp);
+
   buffer[i] = '\0';
 
   return buffer;

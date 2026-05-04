@@ -33,9 +33,9 @@ int main(int argc,  char *argv[]) {
       char buff[8];
 
       printf("Console-Friendly File Manager ");
-      printf("v%s.", atoi(VER_MAJOR, buff, 8));
-      printf("%s.", atoi(VER_MINOR, buff, 8));
-      printf("%s", atoi(VER_PATCH, buff, 8));
+      printf("v%s.", itoa(VER_MAJOR, buff, 8));
+      printf("%s.", itoa(VER_MINOR, buff, 8));
+      printf("%s", itoa(VER_PATCH, buff, 8));
       printf("%s\n", VER_PREFIX);
 
       return 0;
