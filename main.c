@@ -30,12 +30,10 @@ int main(int argc,  char *argv[]) {
 
     if ((strncmp(argv[1], "-v", 3) == 0) || (strncmp(argv[1], "--version", 10) == 0)) {
 
-      char buff[8];
-
       printf("Console-Friendly File Manager ");
-      printf("v%s.", itoa(VER_MAJOR, buff, 8));
-      printf("%s.", itoa(VER_MINOR, buff, 8));
-      printf("%s", itoa(VER_PATCH, buff, 8));
+      printf("v%u.", VER_MAJOR);
+      printf("%u.", VER_MINOR);
+      printf("%u", VER_PATCH);
       printf("%s\n", VER_PREFIX);
 
       return 0;
@@ -61,14 +59,18 @@ int main(int argc,  char *argv[]) {
 
   if (current_path[0] == '\0') 
     getcwd(current_path, MAXPATHNAME);
+
   chdir(current_path);
 
   directory = init_directories(current_path);
   window = init_display(directory);
   
   while (state.is_running) {
+
     get_updates(window);
+
     update_display(window, &directory);
+
   }
   
 	kill_display(window);
