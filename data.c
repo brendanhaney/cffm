@@ -391,9 +391,9 @@ char *to_lowercase(char *in) {
 
   char *s = malloc(sizeof(char) * MAXFILENAME);
 
-  strncpy(s, in, MAXFILENAME);
-
   char *p;
+
+  strncpy(s, in, MAXFILENAME);
 
   for (p = s; *p; p++) 
     *p = tolower(*p);
