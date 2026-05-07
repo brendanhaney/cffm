@@ -1,7 +1,7 @@
 /*******************************\
 * CONSOLE-FRIENDLY FILE MANAGER *
 *                               *
-*   -Brendan Haney 2023-2024    *
+*   -Brendan Haney 2023-2026    *
 \*******************************/
 
 #include "config.h"

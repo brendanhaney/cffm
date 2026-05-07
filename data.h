@@ -6,14 +6,8 @@
 #define MAXPREVIEWSIZE 4096
 #define MAXSELECTED 256
 
+#include "types.h"
 #include "hash.h"
-
-#include <stdint.h>
-
-typedef struct File File;
-typedef struct Folder Folder;
-typedef struct Directory Directory;
-typedef struct State State;
 
 struct File {
   char name[MAXFILENAME];

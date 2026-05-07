@@ -3,10 +3,7 @@
 
 #define HASHTABLE_SIZE 1024
 
-#include <stdint.h>
-
-typedef struct ht_entry ht_entry;
-typedef struct Table Table;
+#include "types.h"
 
 struct ht_entry {
   void *dir; 
