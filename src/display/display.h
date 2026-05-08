@@ -26,8 +26,8 @@ enum window_modes {
   CONFIRM_MODE  = 6
 };
 
-#include "types.h"
-#include "data.h"
+#include "../misc/types.h"
+#include "../file/data.h"
 
 #include <ncurses.h>
 

@@ -1,5 +1,5 @@
 #include "hash.h"
-#include "data.h"
+#include "../file/data.h"
 
 #include <stdlib.h>
 #include <stdint.h>

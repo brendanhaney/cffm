@@ -5,9 +5,9 @@
 \*******************************/
 
 #include "config.h"
-#include "hash.h"
-#include "data.h"
-#include "display.h"
+#include "misc/hash.h"
+#include "file/data.h"
+#include "display/display.h"
 
 #include <stdlib.h>
 #include <stdio.h>

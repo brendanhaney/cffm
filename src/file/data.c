@@ -1,6 +1,6 @@
-#include "config.h"
+#include "../config.h"
 #include "data.h"
-#include "hash.h"
+#include "../misc/hash.h"
 
 #include <dirent.h>
 #include <unistd.h>

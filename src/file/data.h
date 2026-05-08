@@ -6,8 +6,8 @@
 #define MAXPREVIEWSIZE 4096
 #define MAXSELECTED 256
 
-#include "types.h"
-#include "hash.h"
+#include "../misc/types.h"
+#include "../misc/hash.h"
 
 struct File {
   char name[MAXFILENAME];

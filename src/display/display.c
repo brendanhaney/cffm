@@ -1,6 +1,6 @@
 #include "display.h"
-#include "data.h"
-#include "config.h"
+#include "../file/data.h"
+#include "../config.h"
 
 #include <ncurses.h>
 #include <stdio.h>

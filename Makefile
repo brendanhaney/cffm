@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = --ansi -pedantic -lncurses -ltinfo -Wall -Werror -Wextra -D_FORTIFY_SOURCE=2
 
-SRC = main.c data.c display.c hash.c
+SRC = src/main.c src/file/*.c src/display/*.c src/misc/*.c
 BIN = cffm
 
 all:
