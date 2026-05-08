@@ -7,7 +7,9 @@
 typedef uint8_t byte_t;
 typedef uint16_t hword_t;
 typedef uint32_t word_t;
-typedef uint64_t dword_t;
+typedef uint64_t dwford_t;
+
+typedef word_t bitset_t;
 
 /* Data Structures */
 typedef struct File File;
