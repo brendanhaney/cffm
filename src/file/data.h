@@ -7,7 +7,7 @@
 #define MAXSELECTED 256
 
 #include "../misc/types.h"
-#include "../misc/hash.h"
+#include "hash.h"
 
 struct File {
   char name[MAXFILENAME];

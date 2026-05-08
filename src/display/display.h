@@ -26,8 +26,11 @@ enum window_modes {
   CONFIRM_MODE  = 6
 };
 
+#include "state.h"
 #include "../misc/types.h"
 #include "../file/data.h"
+#include "../file/manager.h"
+#include "../event/manager.h"
 
 #include <ncurses.h>
 
@@ -45,6 +48,12 @@ struct Display {
   int preview_width;
   int preview_height;
   int width, height;
+
+  FileManager *fm;
+
+  EventManager *em;
+
+  bitset_t state;
  
 };
 
