@@ -7,6 +7,8 @@
 #include "config.h"
 #include "misc/hash.h"
 #include "file/data.h"
+#include "file/manager.h"
+#include "file/state.h"
 #include "display/display.h"
 
 #include <stdlib.h>
@@ -23,6 +25,7 @@ int main(int argc,  char *argv[]) {
 
   Directory *directory;
   Display *window;
+  FileManager fm;
   
   char current_path[MAXPATHNAME] = {'\0'};
 
@@ -62,10 +65,15 @@ int main(int argc,  char *argv[]) {
 
   chdir(current_path);
 
-  directory = init_directories(current_path);
-  window = init_display(directory);
+  fm = fm_new(current_path);
+
+  directory = fm.active;
+
+  window = init_display(&fm);
   
-  while (state.is_running) {
+  fm.state |= FM_RUNNING;
+
+  while (fm.state & FM_RUNNING) {
 
     get_updates(window);
 

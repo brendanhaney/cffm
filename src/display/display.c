@@ -1,5 +1,6 @@
 #include "display.h"
 #include "../file/data.h"
+#include "../file/state.h"
 #include "../config.h"
 
 #include <ncurses.h>
@@ -135,13 +136,14 @@ void handle_input(int key, Display *dis, Directory *dir, Directory **dirptr) {
     break;
 
     case key_show_border:
-      state.show_border = state.show_border == 1 ? 0 : 1;
+
+      dis->state ^= SHOW_BORDER;
 
     break;
 
     case key_quit:
 
-      state.is_running = 0;
+      dis->fm->state &= ~FM_RUNNING;
 
     break;
 
@@ -471,7 +473,7 @@ char *get_file_preview(File *file) {
   return buffer;
 }
 
-Display *init_display(Directory *dir) {	
+Display *init_display(FileManager *fm) {	
 
   Display *dis = malloc(sizeof(Display));
 
@@ -514,6 +516,8 @@ Display *init_display(Directory *dir) {
   wattron(dis->rightw, A_BOLD);
   wattron(dis->titlew, A_BOLD);
 
+  Directory *dir = fm->active;
+
   if (dir->selected < dir->folderc && dir->folders[dir->selected].subdir == NULL) {
 
     Directory *subtemp = malloc(sizeof(Directory));
@@ -535,6 +539,7 @@ Display *init_display(Directory *dir) {
     }
 
   }
+
   return dis;
 }
 
@@ -801,7 +806,7 @@ void update_display(Display *dis, Directory **dirptr) {
     draw_window(rightw, dis->rightw_width, dis->height, dir->folders[dir->selected].subdir, DIR_MODE, NULL);
   else {
 
-    if (state.show_border) 
+    if (dis->state&SHOW_BORDER) 
       draw_window(rightw, dis->rightw_width, dis->height, dir, BOX_MODE, NULL);
 
     draw_window(previeww, dis->preview_width, dis->preview_height, dir, PREVIEW_MODE, NULL);

@@ -58,7 +58,7 @@ struct Display {
 };
 
 void get_updates(Display *dis);
-Display *init_display(Directory *dir);
+Display *init_display(FileManager *fm);
 void update_display(Display *dis, Directory **dir);
 void kill_display(Display *dis);
 
